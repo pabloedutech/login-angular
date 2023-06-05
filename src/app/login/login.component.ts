@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,7 @@ export class LoginComponent implements OnInit {
   password = "";
   errorMsg = "";
 
-  constructor() {}
+  constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {
   }
@@ -23,6 +25,13 @@ export class LoginComponent implements OnInit {
       this.errorMsg = "Password é obrigatório"
     } else {
       this.errorMsg = "";
+      let res = this.auth.login(this.username, this.password);
+      if (res === 200) {
+        this.router.navigate(['home'])
+      }
+      if (res === 403) {
+        this.router.navigate(['Login inválido'])
+      }
     }
   }
 

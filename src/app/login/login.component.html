@@ -1,8 +1,12 @@
-<div class="login-container">
-  <img class="film" src="assets/img/logo.jpeg" alt="">
-  <div class="logo">Rotten Potatoes</div>
-  <div class="desc">
-    Aqui vai uma descrição da aplicação
+<!-- <section class="login-container">
+  <div class="container-esq">
+    <img class="img" src="assets/img/logo.jpeg" alt="">
+  </div>
+  <div class="container-dir">
+    <div class="title">Portifólio</div>
+    <div class="desc">
+      Conheça um pouco mais sobre minhas aplicações
+    </div>
   </div>
   <div class="login-form">
     <div class="form-group">
@@ -18,4 +22,44 @@
       <button class="btn btn-dark" (click)="login()">Login</button>
     </div>
   </div>
-</div>
+</section> -->
+
+
+
+
+<app-header></app-header>
+<section class="login-container">
+  <div class="container-esq">
+    <img class="img" src="assets/img/logo.jpeg" alt="">
+  </div>
+  <div class="container-dir">
+    <div class="content">
+      <div class="title">Portifólio</div>
+      <div class="desc">
+        Conheça um pouco mais sobre minhas aplicações
+      </div>
+      <div class="login-form">
+        <div class="form-group">
+          <label for="uname">Usuário</label>
+          <input type="text" name="uname" class="form-control" [(ngModel)]="username"/>
+        </div>
+        <div class="for-group">
+          <label for="pwrd">Senha</label>
+          <input type="text" name="pword" class="form-control" [(ngModel)]="password"/>
+        </div>
+        <div class="btn-container">
+          <div class="error">{{ errorMsg }}</div>
+          <button class="btn btn-dark" (click)="login()">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <footer class="footer">
+  <div class="container">
+    <p>&copy; 2023 Seu Site. Todos os direitos reservados.</p>
+  </div>
+</footer> -->
+
+<app-footer></app-footer>
